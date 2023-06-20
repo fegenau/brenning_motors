@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breninng Motors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="icon" href="./iconos/LOGO 2.png">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 " id="menu">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html" >
+            <img src="./iconos/LOGO 2.png "  alt="Brenningg motors" width="80" height="me-auto">
+        </a>
+        <h1 class="fw-bold fs-2 mx-2 ">BreninngMotors</h1>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4 fs-5 ">
+
+              <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./models.html">Modelos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./productos.html">Productos</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contactos</a>
+              </li>           
+            </ul>    
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="email" placeholder="Correo Electronico" aria-label="email">
+              <button class="btn btn-primary btn-primary-outline-success" type="button"> Suscribete</button>
+            </form> 
+          </div>
+        </div>
+      </nav>
+	<meta charset="UTF-8">
+
+    <center>
+
+      <section id="inicio">
+        <h2>¡Bienvenidos a Breninng Motors!</h2>
+        <p>¡Somos una empresa enfocada en la venta de motocicletas de alta calidad y precios competitivos. Ofrecemos una experiencia de compra única y contamos con un equipo altamente capacitado y comprometido en brindar un excelente servicio al cliente y asesoramiento para elegir la mejor motocicleta según las necesidades y preferencias de nuestros clientes.</p>
+      </section>
+      
+      <section id="contacto" style="display: flex;">
+        <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+          <div>
+            <form action="https://formsubmit.co/ma.laborie@duocuc.cl" method="POST">
+              <table>
+                <tr>
+                  <td><label for="nombre">Nombre:</label></td>
+                  <td><input type="text" id="nombre" name="nombre" required></td>
+                </tr>
+                <tr>
+                  <td><label for="email">Email:</label></td>
+                  <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                  <td><label for="mensaje">Mensaje:</label></td>
+                  <td><textarea id="mensaje" name="mensaje" rows="2" required></textarea></td>
+                </tr>
+                <tr>
+                  <td><label for="opcion1">Tipo de motocicleta:</label></td>
+                  <td>
+                    <select id="opcion1" name="opcion1" onchange="mostrarSegundaLista(this.value)">
+                      <option value="">Seleccionar</option>
+                      <option value="urbanas">Urbanas</option>
+                      <option value="vintage">Vintage</option>
+                      <option value="hyper-naked">Hyper Naked</option>
+                      <option value="adventure-touring">Adventure Touring</option>
+                      <option value="scooters">Scooters</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr id="segundaListaRow" style="display: none;">
+                  <td><label for="opcion2">Modelo de motocicleta:</label></td>
+                  <td>
+                    <select id="opcion2" name="opcion2">
+                      <option value="">Seleccionar</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <input type="hidden" name="_captcha" value="false">
+                  <input type="hidden" name="_next" value="http://localhost/programacion2023_LosBrenning/contacto.html">
+                  <td colspan="2" style="text-align: center;"><input type="submit" value="Enviar"></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+        <script src="js/contacto.js"></script>
+        
+        <div style="flex: 1;">
+          <div style="width: 600px; height: 450px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.9022329368959!2d-70.61528254327918!3d-33.43312516615078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c586497835ad%3A0xa929ba68e1ac6051!2sDuoc%20UC%20Casa%20Central!5e0!3m2!1ses!2scl!4v1680842819695!5m2!1ses!2scl" width="100%" height="100%" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div>
+            <p>Estamos ubicados en Eliodoro Yañez 1595, Providencia, Región Metropolitana</p>
+            <p>Teléfono: +56 9 1234 5678</p>
+            <p>Email: info@breninngmotors.com</p>
+          </div>
+        </div>
+      </section>
+                      
+  </main>
+  <footer style="position: fixed; bottom: 0; width: 100%;">
+    <p style="display: inline;">&copy; 2023 Breninng Motors</p>
+    <li class="nav-item" style="display: inline;">
+        <a class="nav-link" href="privacy-policy.html">privacy-policy</a>
+    </li> 
+</footer>
+  </center>
+</body>
+</html>
