@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Brenning.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'BrenningMotors',
+        'NAME': 'BrenningMotors.db',
     }
 }
 
