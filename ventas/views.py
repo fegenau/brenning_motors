@@ -16,3 +16,9 @@ def contacto(request):
 
 def login (request):
     return render(request, 'login.html')
+
+def hyperNaked (request):
+    return render(request, 'hyperNaked.html')
+
+def cb190 (request):
+    return render(request, 'cb190.html')
