@@ -9,7 +9,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <h1> Brenning Motors </h1>
+    <h3 class="mx-4 my-3 ">
+        Selecciona una categoria:   
+      </h3>
+      <div class="container">
+        {% load static %}
+        <div class="panel active" img src="{% static './imgs/M_URBANAS.jpg' %} " 
+        a href="./urbanas.html">
+           <a href="./urbanas.html" style="color: white;"><h3>Urbanas</h3></a>
+        </div>
+        <div class="panel" style="background-image: url('./imagenes/motos-retro-bmw-r-ninet.jpg')">
+          <a href="./vintage.html" style="color: white;"><h3>Vintage</h3></a>
+        </div>
+        <div class="panel" style="background-image: url('./imagenes/M_NAKED.jpg')">
+          <a href="./hyper-naked.html" style="color: white;"><h3>Hyper Naked</h3></a>
+        </div>
+        <div class="panel" style="background-image: url('./imagenes/M_TOURING.jpg')">
+          <a href="./adventure-touring.html" style="color: white;"><h3>Adventure-Touring</h3></a> 
+        </div>
+        <div class="panel" style="background-image: url('./imagenes/M_SCOOTERS.jpg')">
+          <a href="./scooters.html" style="color: white;"><h3>Scooters</h3></a> 
+        </div>
+      </div>
     
     <footer>
         &copy;2023 TheBrenningCompany
