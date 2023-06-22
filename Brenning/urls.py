@@ -27,4 +27,6 @@ urlpatterns = [
     path('login/',views.login),
     path('hyperNaked/',views.hyperNaked),
     path('cb190/',views.cb190),
+    path('mT07/',views.mT07),
+    path('streetTripleRS/',views.streetTripleRS),
 ]

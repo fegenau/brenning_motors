@@ -22,3 +22,9 @@ def hyperNaked (request):
 
 def cb190 (request):
     return render(request, 'cb190.html')
+
+def mT07 (request):
+    return render(request, 'mT07.html')
+
+def streetTripleRS (request):
+    return render(request, 'streetTripleRS.html')
