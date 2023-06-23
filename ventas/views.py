@@ -43,3 +43,4 @@ def suptenere(request):
 
 def tiger(request):
     return render(request, 'tiger.html')
+
