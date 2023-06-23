@@ -25,6 +25,7 @@ urlpatterns = [
     path('modelos/',views.modelos),
     path('contacto/',views.contacto),
     path('login/',views.login),
+<<<<<<< HEAD
     path('urbanas/',views.urbanas),
     path('hypernaked/',views.hypernaked),
     path('adventuretouring/',views.adventuretouring),
@@ -48,4 +49,10 @@ urlpatterns = [
 
 
 
+=======
+    path('hyperNaked/',views.hyperNaked),
+    path('cb190/',views.cb190),
+    path('mT07/',views.mT07),
+    path('streetTripleRS/',views.streetTripleRS),
+>>>>>>> seed
 ]
