@@ -16,3 +16,6 @@ def contacto(request):
 
 def login (request):
     return render(request, 'login.html')
+
+def vintage (request):
+    return render(request, 'vintage.html')
