@@ -33,5 +33,6 @@ urlpatterns = [
     path('privacy/', views.politicas),
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
-    path('tiger/',views.tiger)
+    path('tiger/',views.tiger),
+    path('formulario/',views.formulario)
 ]
