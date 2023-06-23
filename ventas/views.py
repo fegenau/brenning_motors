@@ -26,9 +26,6 @@ def vintage (request):
 def adventuretouring (request):
     return render(request, 'adventure-touring.html')
 
-def hypernaked (request):
-    return render(request, 'hyper-naked.html')
-
 def politicas (request):
     return render(request, 'privacy-policy.html')
 
@@ -40,27 +37,6 @@ def suptenere(request):
 
 def tiger(request):
     return render(request, 'tiger.html')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #scooters
 def scooters (request):

@@ -25,9 +25,8 @@ urlpatterns = [
     path('modelos/',views.modelos),
     path('contacto/',views.contacto),
     path('login/',views.login),
-<<<<<<< HEAD
     path('urbanas/',views.urbanas),
-    path('hypernaked/',views.hypernaked),
+    path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
     path('privacy/', views.politicas),
@@ -35,24 +34,12 @@ urlpatterns = [
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
 
-
-
 #Scooters
     path('scooters/',views.scooters),
-        path('VespaPrimavera/',views.VespaPrimavera),
-        path('YamahaNMAX/',views.YamahaNMAX),
-        path('HondaPCX/',views.HondaPCX),
-
-
-
-
-
-
-
-=======
-    path('hyperNaked/',views.hyperNaked),
+    path('VespaPrimavera/',views.VespaPrimavera),
+    path('YamahaNMAX/',views.YamahaNMAX),
+    path('HondaPCX/',views.HondaPCX),
     path('cb190/',views.cb190),
     path('mT07/',views.mT07),
     path('streetTripleRS/',views.streetTripleRS),
->>>>>>> seed
 ]
