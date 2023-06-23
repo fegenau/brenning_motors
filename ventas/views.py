@@ -29,9 +29,6 @@ def adventuretouring (request):
 def hypernaked (request):
     return render(request, 'hyper-naked.html')
 
-def scooter (request):
-    return render(request, 'scooter.html')
-
 def politicas (request):
     return render(request, 'privacy-policy.html')
 
@@ -44,3 +41,36 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#scooters
+def scooters (request):
+    return render(request, 'Scooters/scooters.html')
+
+def VespaPrimavera(request):
+    return render(request, 'Scooters/VespaPrimavera.html')
+
+def HondaPCX(request):
+    return render(request, 'Scooters/HondaPCX.html')
+
+def YamahaNMAX(request):
+    return render(request, 'Scooters/YamahaNMAX.html')

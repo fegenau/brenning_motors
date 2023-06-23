@@ -29,9 +29,23 @@ urlpatterns = [
     path('hypernaked/',views.hypernaked),
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
-    path('scooter/',views.scooter),
     path('privacy/', views.politicas),
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
-    path('tiger/',views.tiger)
+    path('tiger/',views.tiger),
+
+
+
+#Scooters
+    path('scooters/',views.scooters),
+        path('VespaPrimavera/',views.VespaPrimavera),
+        path('YamahaNMAX/',views.YamahaNMAX),
+        path('HondaPCX/',views.HondaPCX),
+
+
+
+
+
+
+
 ]
