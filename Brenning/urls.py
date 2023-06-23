@@ -30,4 +30,8 @@ urlpatterns = [
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
     path('scooter/',views.scooter),
+    path('privacy/', views.politicas),
+    path('africa-twin/',views.atwin),
+    path('super-tenere/',views.suptenere),
+    path('tiger/',views.tiger)
 ]

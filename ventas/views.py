@@ -30,4 +30,16 @@ def hypernaked (request):
     return render(request, 'hyper-naked.html')
 
 def scooter (request):
-    return render(request, 'scooter')
+    return render(request, 'scooter.html')
+
+def politicas (request):
+    return render(request, 'privacy-policy.html')
+
+def atwin(request):
+    return render (request, 'africa-twin.html')
+
+def suptenere(request):
+    return render (request, 'super-tenere.html')
+
+def tiger(request):
+    return render(request, 'tiger.html')
