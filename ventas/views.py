@@ -16,3 +16,18 @@ def contacto(request):
 
 def login (request):
     return render(request, 'login.html')
+
+def urbanas (request):
+    return render(request, 'urbanas.html')
+
+def vintage (request):
+    return render(request, 'vintage.html')
+
+def adventuretouring (request):
+    return render(request, 'adventure-touring.html')
+
+def hypernaked (request):
+    return render(request, 'hyper-naked.html')
+
+def scooter (request):
+    return render(request, 'scooter')
