@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-from .forms import all 
+from .forms import LoginForm, Formulario
 from .models import Cliente
 
 # Create your views here.
@@ -48,6 +48,15 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
+def g310r(request):
+    return render(request, 'G310R.html')
+
+def fz25(request):
+    return render(request, 'fz25.html')
+
+def xr(request):
+    return render(request, 'xr.html')
+
 def formulario (request):
     if request.method == 'POST':
         form = Formulario(request.POST)
@@ -67,7 +76,7 @@ def formulario (request):
                 direccion=datos_formulario['direccion'],
                 telefono=datos_formulario['telefono'],
                 email=datos_formulario['email']
-                username
+                
             )
            mi_objeto.save()
         return redirect('formulario')
