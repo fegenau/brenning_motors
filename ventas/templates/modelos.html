@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,9 +13,9 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    {% load static %}
+    
     <link rel="stylesheet" href="{% static './css/style.css' %}" />
-    {% load static %}
+    
     <link rel="stylesheet" href="{% static './css/normalize.css' %}" />
   
   </head>
@@ -55,7 +57,7 @@
         <a href="/scooters" style="color: white"><h3>Scooters</h3></a>
       </div>
     </div>
-    {% load static %}
+    
     <script src="{% static 'js/script_models.js' %}"></script>
 
     <footer  >&copy;2023 TheBrenningCompany</footer>
