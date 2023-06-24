@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventure-Touring</title>
-    {% load static %}
+    
     <link rel="stylesheet" href="{% static './css/adventure-touring.css' %}">
 </head>
 <body>
@@ -23,21 +24,21 @@
     <article id = m1>
         <p>Africa Twin Mecánica 2023</p>
         <a href="/africa-twin">
-            {% load static %}
+            
             <img src="{% static 'imgs/aventure-turing/1100-l-africa-twin.jpg' %}" alt="" width=100% /></a>
       </article>
       
       <article id = m2>
         <p> Super Teneré (XT-1200ZE)</p>
         <a href="/super-tenere">
-            {% load static %}
+          
             <img src="{% static 'imgs/aventure-turing/yamaha-xt-1200ze.jpg' %}" alt="" width=100% /></a>
       </article>
       
       <article id = m3>
         <p> Tiger 1200 Rally Explorer</p>
        <a href="/tiger">
-        {% load static %}
+      
         <img src="{% static 'imgs/aventure-turing/trumph-tiger-1200-2022-rally-explorer.jpg' %}" alt="" width=100% /></a>
       </article>
       <br><br><br><br>

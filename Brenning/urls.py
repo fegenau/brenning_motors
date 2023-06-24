@@ -37,5 +37,5 @@ urlpatterns = [
     path('formulario/',views.formulario),
     path('g310r/',views.g310r),
     path('fz25/',views.fz25),
-    path('xr/',views.xr),
+    path('cb190/',views.cb190),
 ]
