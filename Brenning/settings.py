@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'ventas.context_processor.total_carrito',
             ],
         },
     },
@@ -80,6 +81,7 @@ DATABASES = {
         'NAME': 'BrenningMotors.db',
     }
 }
+
 
 
 # Password validation

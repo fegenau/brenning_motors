@@ -1,6 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
+ 
+from ventas.Carrito import Carrito
+from ventas.models import Producto
+
+
+def tienda(request):
+    productos = Producto.objects.all()
+    return render(request, "productos.html", {'productos':productos})
+
+def agregar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.agregar(producto)
+    return redirect("Productos")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.eliminar(producto)
+    return redirect("Productos")
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    carrito.restar(producto)
+    return redirect("Productos")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("Productos")
 
 def index(request):
     return render(request, 'index.html')
