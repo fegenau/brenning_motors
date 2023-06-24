@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -50,6 +53,7 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
+<<<<<<< HEAD
 #scooters
 def scooters (request):
     return render(request, 'Scooters/scooters.html')
@@ -74,3 +78,19 @@ def mT07 (request):
 
 def streetTripleRS (request):
     return render(request, 'streetTripleRS.html')
+=======
+def g310r(request):
+    return render(request, 'G310R.html')
+
+def fz25(request):
+    return render(request, 'fz25.html')
+
+def xr(request):
+    return render(request, 'xr.html')
+
+def cb190(request):
+    return render(request, 'cb190.html')
+
+
+
+>>>>>>> egenau
