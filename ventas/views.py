@@ -1,8 +1,7 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Usuario
-from .forms import RegistroForm,LoginForm
-
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -59,35 +58,6 @@ def xr(request):
 
 def cb190(request):
     return render(request, 'cb190.html')
-
-def registro_cliente(request):
-    if request.method == 'POST':
-        form = RegistroForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-    else:
-        form = RegistroForm()
-    return render(request, 'registro_cliente.html', {'form': form})
-
-def login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            rut = form.cleaned_data['rut']
-            password = form.cleaned_data['password']
-            try:
-                usuario = Usuario.objects.get(rut=rut, password=password)
-                # Realizar acciones adicionales después de iniciar sesión
-                return redirect('/')
-            except Usuario.DoesNotExist:
-                form.add_error(None, 'Credenciales inválidas')
-    else:
-        form = LoginForm()
-    return render(request, 'login.html', {'form': form})
-
-
-
 
 
 
