@@ -25,4 +25,8 @@ urlpatterns = [
     path('modelos/',views.modelos),
     path('contacto/',views.contacto),
     path('login/',views.login),
+    path('vintage/',views.vintage),
+    path('caferacer/',views.caferacer),
+    path('ducati1100/',views.ducati1100),
+    path('z650/',views.z650)
 ]

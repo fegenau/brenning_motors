@@ -19,3 +19,12 @@ def login (request):
 
 def vintage (request):
     return render(request, 'vintage.html')
+
+def caferacer (request):
+    return render(request, 'caferacer.html')
+
+def ducati1100 (request):
+    return render(request, 'ducati1100.html')
+
+def z650 (request):
+    return render(request, 'z650.html')
