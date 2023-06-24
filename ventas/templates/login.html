@@ -8,10 +8,32 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     {% load static %}
-    <link rel="stylesheet" href="{% static './css/style.css' %}">
+    <link rel="stylesheet" href="{% static './css/Login.css' %}">
 </head>
 <body>
-    <h1> Brenning Motors </h1>
+    
+    <body id="login">
+        <div class="revestimiento">
+          <div class="interno">
+            <div class="form">
+                  <h1 class="titulo-fcm">BreninngMotors</h1>
+            <form action="/" id="LogInForm" method="post">
+                <div class="input-container">
+                    <img src="{% static './imgs/Login/user.png' %}" alt="Imagen de usuario" width="25" height="25">
+                    <input type="text" placeholder="Usuario" class="txt-login" name="UserName" required title="Ingrese un Rut">
+                </div>
+                <div class="input-container">
+                    <img src="{% static './imgs/Login/key.png' %}" alt="Imagen de llave" width="25" height="25">
+                    <input type="password" placeholder="Contraseña" class="txt-login" name="password" value="" required id="txtContrasena" title="Ingrese una Contraseña">
+                </div>
+                <div>
+                    <input style="margin-left:20px; cursor:pointer;" type="checkbox" id="cbxContrasena" title="Mostrar/Ocultar Contraseña">
+                    <label id="lblContrasena">&nbsp; Mostrar Contraseña</label>
+                </div>
+                <button class="btn btn-outline-success" type="button"> Ingresar</button>
+            </form>
+        </div>
+      </div>
     
     <footer>
         &copy;2023 TheBrenningCompany
