@@ -34,7 +34,6 @@ urlpatterns = [
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
-    path('formulario/',views.formulario),
     path('g310r/',views.g310r),
     path('fz25/',views.fz25),
     path('cb190/',views.cb190),
