@@ -6,7 +6,7 @@ class RegistroForm(forms.ModelForm):
 
     class Meta:
         model = Usuario
-        fields = ('rut', 'nombre', 'tipo_usuario', 'password')
+        fields = ('rut', 'tipo_usuario', 'password')
 
 class LoginForm(forms.Form):
     rut = forms.IntegerField()

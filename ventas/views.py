@@ -65,10 +65,10 @@ def registro_cliente(request):
         form = RegistroForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('inicio')
+            return redirect('/')
     else:
         form = RegistroForm()
-    return render(request, 'registro.html', {'form': form})
+    return render(request, 'registro_cliente.html', {'form': form})
 
 def login(request):
     if request.method == 'POST':
