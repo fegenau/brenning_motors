@@ -48,6 +48,15 @@
         </div>
       </nav>
       <section class="contenedor">
+        {% for producto in productos %}
+<div class="item">
+    <span class="titulo-item">{{ producto.guantes }}</span>
+    <img src="{{ producto.img/guantes.jpg }}" alt="" class="img-item">
+    <span class="precio-item">${{ producto.$20.000 }}</span>
+    <button class="boton-item">Agregar al Carrito</button>
+</div>
+{% endfor %}
+
         <div class="contenedor-items">
             <div class="item">
                 <span class="titulo-item">Guantes</span>

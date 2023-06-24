@@ -62,3 +62,10 @@ def mT07 (request):
 
 def streetTripleRS (request):
     return render(request, 'streetTripleRS.html')
+
+from django.shortcuts import render
+from myapp.models import Producto
+
+def productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'productos.html', {'productos': productos})

@@ -42,4 +42,6 @@ urlpatterns = [
     path('cb190/',views.cb190),
     path('mT07/',views.mT07),
     path('streetTripleRS/',views.streetTripleRS),
+    path('productos/',views.productos),
+    
 ]
