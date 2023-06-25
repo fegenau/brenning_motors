@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breninng Motors</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/hyper-naked-in.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'imgs/iconos/LOGO 2.png' %}">
+  </head>
+  <body>
+    <article id="m1">
+            <img src="{% static 'imgs/Triumph-speed-triple-1050-r.jpg'%}" alt="" width=80% />
+    </article>
+    <br><br>
+    <article id="descripcionHN">
+        <h1>
+            TRIUMPH Street Triple RS
+        </h1><br>
+        <h3>
+            Precio lista $12.490.000.- <br>
+        </h3>
+        <h3 class="fw-bold">
+            Bono de financiamiento $11.990.000.-
+        </h3>
+        <Br>
+        <h6>
+            *Los precios y especificaciones aplican respecto vehículos año modelo 2023, IVA Incluido; no incluyen:
+            Permiso de Circulación, Patentes, accesorios, seguro y gastos administrativos.
+        </h6>
+        <br>
+        <a class="btn btn-primary" href="/contacto">Cotizar</a>
+    </article>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <article id="descripcion1">
+        <h1 class="fw-bold">
+            TRIUMPH Street Triple RS
+        </h1>
+        <h6 class="fw-bold">
+            La moto deportiva más pura, más gratificante y de sensaciones más
+            intensas que se puede encontrar hoy día. Tomamos la Speed Triple,
+            la primera y mejor street fighter del mundo, con su característico
+            estilo agresivo y su motor tricilíndrico de 135 CV, y le añadimos
+            los mejores componentes de la industria motociclista de Öhlins,
+            Pirelli y Brembo.El resultado es la Speed Triple R, máximas
+            prestaciones en el mundo real para emocionar al piloto más
+            curtido.Basada en la Speed Triple, que ya es una máquina ágil
+            y de altas prestaciones. La R ofrece un guiado más preciso y
+            unas sensaciones aún más fieles para crear la experiencia de
+            conducción más intensa, táctil y satisfactoria que haya ofrecido
+            jamás una Triumph.La Speed Triple nunca intentó ocultar lo que
+            era, una avanzada moto deportiva con el rendimiento optimizado
+            para la calle. Pero la R lo proclama a los cuatro vientos.
+        </h6>
+    </article>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer class="container-fluid mx-2 text-center  " style="color: rgb(0, 0, 0)">
+        &copy;2023 TheBrenningCompany
+    </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}
