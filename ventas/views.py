@@ -53,7 +53,6 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
-<<<<<<< HEAD
 #scooters
 def scooters (request):
     return render(request, 'Scooters/scooters.html')
@@ -78,7 +77,7 @@ def mT07 (request):
 
 def streetTripleRS (request):
     return render(request, 'streetTripleRS.html')
-=======
+
 def g310r(request):
     return render(request, 'G310R.html')
 
@@ -93,4 +92,3 @@ def cb190(request):
 
 
 
->>>>>>> egenau

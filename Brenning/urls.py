@@ -25,7 +25,6 @@ urlpatterns = [
     path('modelos/',views.modelos),
     path('contacto/',views.contacto),
     path('login/',views.login),
-    
     path('urbanas/',views.urbanas),
     path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
@@ -34,22 +33,7 @@ urlpatterns = [
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
-<<<<<<< HEAD
-
-#Scooters
-    path('scooters/',views.scooters),
-    path('VespaPrimavera/',views.VespaPrimavera),
-    path('YamahaNMAX/',views.YamahaNMAX),
-    path('HondaPCX/',views.HondaPCX),
-    path('cb190/',views.cb190),
-    path('mT07/',views.mT07),
-    path('streetTripleRS/',views.streetTripleRS),
-    path('caferacer/',views.caferacer),
-    path('ducati1100/',views.ducati1100),
-    path('z650/',views.z650)
-=======
     path('g310r/',views.g310r),
     path('fz25/',views.fz25),
     path('cb190/',views.cb190),
->>>>>>> egenau
 ]
