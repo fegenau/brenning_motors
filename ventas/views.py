@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .forms import RegistroUsuarioForm,LoginForm
 from .models import Usuario
 from django.contrib import messages
+from django.contrib.auth import login, logout
 
 # Create your views here.
 
@@ -99,7 +100,7 @@ def registro_usuario(request):
             form.save()
             usuario = form.save()
             messages.success(request,'Registro existoso')
-            return redirect('/')  # Redireccionar a la página de inicio después de guardar el usuario
+            return redirect('/') 
     else:
         form = RegistroUsuarioForm()
     

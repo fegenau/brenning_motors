@@ -37,4 +37,7 @@ urlpatterns = [
     path('fz25/',views.fz25),
     path('cb190/',views.cb190),
     path('registro/',views.registro_usuario),
+    path('caferacer/',views.caferacer),
+    path('ducati1100/',views.ducati1100),
+    path('z650/',views.z650),
 ]
