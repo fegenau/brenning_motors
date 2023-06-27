@@ -18,7 +18,6 @@ class Motos(models.Model):
 class Usuario(models.Model):
     rut = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    tipo_usuario = models.CharField(max_length=100)
     password = models.CharField(max_length=255)
 
     def __str__(self):
