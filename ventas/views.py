@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from .models import Producto
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -53,7 +55,6 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
-<<<<<<< HEAD
 #scooters
 def scooters (request):
     return render(request, 'Scooters/scooters.html')
@@ -67,6 +68,7 @@ def HondaPCX(request):
 def YamahaNMAX(request):
     return render(request, 'Scooters/YamahaNMAX.html')
 
+#hyperNaked
 def hyperNaked (request):
     return render(request, 'hyperNaked.html')
 
@@ -78,29 +80,27 @@ def mT07 (request):
 
 def streetTripleRS (request):
     return render(request, 'streetTripleRS.html')
-<<<<<<< HEAD
 
-from django.shortcuts import render
-from myapp.models import Producto
+def g310r (request):
+    return render(request, 'G310R.html')
+
+def fz25 (request):
+    return render(request, 'fz25.html')
+
+def xr (request):
+    return render(request, 'xr.html')
 
 def productos(request):
     productos = Producto.objects.all()
     return render(request, 'productos.html', {'productos': productos})
-=======
-=======
-def g310r(request):
-    return render(request, 'G310R.html')
 
-def fz25(request):
-    return render(request, 'fz25.html')
+def productos(request):
+    # Agregar los productos a la base de datos
+    Producto.objects.create(titulo="Guantes", imagen="imgs/guantes.jpg", precio=20000)
+    Producto.objects.create(titulo="Botas", imagen="imgs/botas.jpg", precio=140000)
+    Producto.objects.create(titulo="Chaqueta", imagen="imgs/chaqueta.jpg", precio=200000)
+    Producto.objects.create(titulo="Mochila", imagen="imgs/mochila.jpg", precio=110000)
 
-def xr(request):
-    return render(request, 'xr.html')
-
-def cb190(request):
-    return render(request, 'cb190.html')
-
-
-
->>>>>>> egenau
->>>>>>> unreleased
+    # Obtener todos los productos de la base de datos
+    productos = Producto.objects.all()
+    return render(request, 'productos.html', {'productos': productos})
