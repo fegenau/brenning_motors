@@ -1,10 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .forms import RegistroUsuarioForm,LoginForm
-from .models import Usuario
-from django.contrib import messages
-from django.contrib.auth import login, logout
+from .forms import CustomUserCreationForm
+from django.contrib.auth import login, authenticate
 
 # Create your views here.
 
@@ -93,37 +91,22 @@ def xr(request):
 def cb190(request):
     return render(request, 'cb190.html')
 
-def registro_usuario(request):
-    if request.method == 'POST':
-        form = RegistroUsuarioForm(request.POST)
-        if form.is_valid():
-            form.save()
-            usuario = form.save()
-            messages.success(request,'Registro existoso')
-            return redirect('/') 
-    else:
-        form = RegistroUsuarioForm()
-    
-    return render(request, 'formulario-registro.html', 
-                  {'form': form
-                   })
 
-def login (request):   
+def registro_usuario(request):
+    data = {
+        'form': CustomUserCreationForm()
+    }
+
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            rut = form.cleaned_data['rut']
-            password = form.cleaned_data['password']
-            try:
-                usuario = Usuario.objects.get(rut=rut, password=password)
-                # Guardar información de sesión para el usuario
-                request.session['usuario_rut'] = usuario.rut
-                request.session['usuario_nombre'] = usuario.nombre
-                messages.success(request, 'Inicio de sesión exitoso.')
-                return redirect('/')
-            except Usuario.DoesNotExist:
-                messages.error(request, 'Credenciales inválidas.')
-    else:
-        form = LoginForm()
-    
-    return render(request, 'login.html', {'form': form})
+        user_creation_form = CustomUserCreationForm(data=request.POST)
+
+        if user_creation_form.is_valid():
+            user_creation_form.save()
+
+            user = authenticate(username=user_creation_form.cleaned_data['username'], password=user_creation_form.cleaned_data['password1'])
+            login(request, user)
+            return redirect('')
+        else:
+            data['form'] = user_creation_form
+
+    return render(request, 'formulario-registro.html', data)

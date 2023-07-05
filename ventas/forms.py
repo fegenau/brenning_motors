@@ -1,16 +1,16 @@
 from django import forms
-from django.core.validators import RegexValidator
-from .models import Usuario
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-class RegistroUsuarioForm(forms.ModelForm):
-    
-    class Meta:
-        model = Usuario
-        fields = ['rut', 'nombre', 'password']
-        widgets = {
-            'password': forms.PasswordInput()
-        }
+class CustomUserCreationForm(UserCreationForm):
+	email = forms.EmailField(required=True)
 
-class LoginForm(forms.Form):
-    rut = forms.CharField(label='RUT', max_length=12)
-    password = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+	class Meta:
+		model = User
+		fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+	def clean_email(self):
+		email = self.cleaned_data['email']
+
+		if User.objects.filter(email=email).exists():
+			raise forms.ValidationError('Este correo electrónico ya está registrado')
+		return email
