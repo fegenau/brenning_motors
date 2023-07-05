@@ -13,20 +13,15 @@ class Motos(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
+        return self.nombre
 
 class Usuario(models.Model):
     rut = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    tipo_usuario = models.CharField(max_length=100)
     password = models.CharField(max_length=255)
 
     def __str__(self):
         return str(self.rut)
-    tipo_usuario = models.CharField(max_length=100)
-    password = models.CharField(max_length=255)
-
-    def str(self):
-        return int(self.rut)
 
 class Ventas(models.Model):
     Boleta = models.IntegerField(primary_key=True)
@@ -35,5 +30,3 @@ class Ventas(models.Model):
 
     def __str__(self):
         return str(self.Boleta)
-    def str(self):
-        return self.Boleta

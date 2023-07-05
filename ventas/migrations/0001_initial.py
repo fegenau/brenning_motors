@@ -40,8 +40,5 @@ class Migration(migrations.Migration):
                 ('Producto', models.ManyToManyField(blank=True, related_name='Producto', to='ventas.Producto')),
             ],
         ),
-<<<<<<< HEAD
     ]
-=======
-    ]
->>>>>>> egenau
+    

@@ -1,7 +1,10 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from .forms import RegistroUsuarioForm,LoginForm
+from .models import Usuario
+from django.contrib import messages
+from django.contrib.auth import login, logout
 
 # Create your views here.
 
@@ -53,7 +56,6 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
-<<<<<<< HEAD
 #scooters
 def scooters (request):
     return render(request, 'Scooters/scooters.html')
@@ -78,7 +80,7 @@ def mT07 (request):
 
 def streetTripleRS (request):
     return render(request, 'streetTripleRS.html')
-=======
+
 def g310r(request):
     return render(request, 'G310R.html')
 
@@ -91,6 +93,37 @@ def xr(request):
 def cb190(request):
     return render(request, 'cb190.html')
 
+def registro_usuario(request):
+    if request.method == 'POST':
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            usuario = form.save()
+            messages.success(request,'Registro existoso')
+            return redirect('/') 
+    else:
+        form = RegistroUsuarioForm()
+    
+    return render(request, 'formulario-registro.html', 
+                  {'form': form
+                   })
 
-
->>>>>>> egenau
+def login (request):   
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            rut = form.cleaned_data['rut']
+            password = form.cleaned_data['password']
+            try:
+                usuario = Usuario.objects.get(rut=rut, password=password)
+                # Guardar información de sesión para el usuario
+                request.session['usuario_rut'] = usuario.rut
+                request.session['usuario_nombre'] = usuario.nombre
+                messages.success(request, 'Inicio de sesión exitoso.')
+                return redirect('/')
+            except Usuario.DoesNotExist:
+                messages.error(request, 'Credenciales inválidas.')
+    else:
+        form = LoginForm()
+    
+    return render(request, 'login.html', {'form': form})
