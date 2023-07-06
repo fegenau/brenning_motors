@@ -23,13 +23,11 @@ urlpatterns = [
     path('', views.index),
     path('productos/',views.productos),
     path('modelos/',views.modelos),
-    path('contacto/',views.contacto),
     path('login/',views.login),
     path('urbanas/',views.urbanas),
     path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
-    path('privacy/', views.politicas),
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
@@ -43,7 +41,9 @@ urlpatterns = [
     path('YamahaNMAX/',views.YamahaNMAX),
     path('HondaPCX/',views.HondaPCX),
 
-
+    #Contacts
+    path('contacto/',views.contacto),
+    path('privacy/', views.politicas),
 
     path('registro/',views.registro_usuario),
     path('caferacer/',views.caferacer),

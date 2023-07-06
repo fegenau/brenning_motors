@@ -17,9 +17,6 @@ def productos(request):
 def modelos(request):
     return render(request, 'modelos.html')
 
-def contacto(request):
-    return render(request, 'contacto.html')
-
 def login (request):
     return render(request, 'login.html')
 
@@ -44,8 +41,7 @@ def vintage (request):
 def adventuretouring (request):
     return render(request, 'adventure-touring.html')
 
-def politicas (request):
-    return render(request, 'privacy-policy.html')
+
 
 def atwin(request):
     return render (request, 'africa-twin.html')
@@ -55,6 +51,14 @@ def suptenere(request):
 
 def tiger(request):
     return render(request, 'tiger.html')
+
+#Contacts
+def contacto(request):
+    return render(request, 'Contacts/contacto.html')
+
+def politicas (request):
+    return render(request, 'Contacts/privacy-policy.html')
+
 
 #scooters
 def scooters (request):
@@ -69,8 +73,10 @@ def HondaPCX(request):
 def YamahaNMAX(request):
     return render(request, 'Scooters/YamahaNMAX.html')
 
+
 def hyperNaked (request):
     return render(request, 'hyperNaked.html')
+
 
 def cb190 (request):
     return render(request, 'cb190.html')
