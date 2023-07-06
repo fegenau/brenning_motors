@@ -16,18 +16,17 @@ class Motos(models.Model):
         return self.nombre
 
 class Usuario(models.Model):
-    #campos de texto
-    rut = models.CharField(max_length=13, primary_key=True)
-    nombre_usuario = models.CharField(max_length=30,default="")
-    nombre = models.CharField(max_length=50)
-    apellido_paterno = models.CharField(max_length=50,default="")
-    apellido_materno = models.CharField(max_length=50,default="")
-    email = models.EmailField(default='a@mail.com')
-    fecha_nacimiento = models.DateField(default="")
-    esta_activa = models.BooleanField(default=True)
+    rut = models.CharField(max_length=12, primary_key=True)
+    nombre_usuario = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=100)
+    apellido_paterno = models.CharField(max_length=100)
+    apellido_materno = models.CharField(max_length=100)
+    email = models.EmailField()
+    fecha_nacimiento = models.DateField()
+    activo = models.BooleanField(default=True)
 
     def __str__(self):
-        return str(self.nombre_usuario)
+        return self.nombre_usuario
 
 
 class Ventas(models.Model):
