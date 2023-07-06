@@ -62,16 +62,16 @@ def politicas (request):
 
 #scooters
 def scooters (request):
-    return render(request, 'Scooters/scooters.html')
+    return render(request, 'Models/Scooters/scooters.html')
 
 def VespaPrimavera(request):
-    return render(request, 'Scooters/VespaPrimavera.html')
+    return render(request, 'Models/Scooters/VespaPrimavera.html')
 
 def HondaPCX(request):
-    return render(request, 'Scooters/HondaPCX.html')
+    return render(request, 'Models/Scooters/HondaPCX.html')
 
 def YamahaNMAX(request):
-    return render(request, 'Scooters/YamahaNMAX.html')
+    return render(request, 'Models/Scooters/YamahaNMAX.html')
 
 
 def hyperNaked (request):
