@@ -1,9 +1,7 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from .forms import RegistroForm
-from django.contrib.auth import login, authenticate
-
+from django.contrib import messages
+from .forms import RegistroForm, LoginForm
+from django.contrib.auth import login
 # Create your views here.
 
 def index(request):
@@ -96,7 +94,22 @@ def registro(request):
         form = RegistroForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            messages.success(request, 'Registro exitoso.')
+            return redirect('registro/')
     else:
         form = RegistroForm()
     return render(request, 'registro.html', {'form': form})
+
+
+def login(request):
+    if request.method == 'POST':
+        form = LoginForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            # Acción adicional después de un inicio de sesión exitoso
+            # Por ejemplo, redireccionar a una página de perfil
+            return redirect('perfil')
+    else:
+        form = LoginForm(request)
+    return render(request, 'login.html', {'form': form})

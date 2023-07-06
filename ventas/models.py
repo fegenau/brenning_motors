@@ -18,6 +18,7 @@ class Motos(models.Model):
 class Usuario(models.Model):
     rut = models.CharField(max_length=12, primary_key=True)
     nombre_usuario = models.CharField(max_length=100)
+    contraseña = models.CharField(max_length=128)
     nombre = models.CharField(max_length=100)
     apellido_paterno = models.CharField(max_length=100)
     apellido_materno = models.CharField(max_length=100)
