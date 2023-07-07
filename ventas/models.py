@@ -3,10 +3,10 @@ from django.db.models.fields import CharField
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    precio = models.DecimalField(max_digits=10, decimal_places=0)
 
-    def str(self):
-        return self.nombre
+    def __str__(self):
+        return f"Nombre: {self.nombre}, Precio: {self.precio}"
     
 class Motos(models.Model):
     nombre = models.CharField(max_length=100)
@@ -27,7 +27,6 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombre_usuario
-
 
 class Ventas(models.Model):
     Boleta = models.IntegerField(primary_key=True)

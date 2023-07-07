@@ -1,20 +1,30 @@
+<<<<<<< HEAD
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from .forms import RegistroUsuarioForm, LoginForm
 from django.contrib.auth import authenticate, login
+=======
+from django.shortcuts import render,redirect,get_object_or_404
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .forms import RegistroUsuarioForm,LoginForm
+from .models import Usuario,Producto
+from django.contrib import messages
+from django.contrib.auth import login, logout
+import locale
+from django.http import JsonResponse
+
+>>>>>>> mlaborie
 # Create your views here.
 
 def index(request):
     return render(request, 'index.html')
 
 def productos(request):
-    return render(request, 'productos.html')
+    return render(request, 'Products/productos.html')
 
 def modelos(request):
     return render(request, 'modelos.html')
-
-def contacto(request):
-    return render(request, 'contacto.html')
 
 def login (request):
     return render(request, 'login.html')
@@ -40,8 +50,7 @@ def vintage (request):
 def adventuretouring (request):
     return render(request, 'adventure-touring.html')
 
-def politicas (request):
-    return render(request, 'privacy-policy.html')
+
 
 def atwin(request):
     return render (request, 'africa-twin.html')
@@ -52,21 +61,31 @@ def suptenere(request):
 def tiger(request):
     return render(request, 'tiger.html')
 
+#Contacts
+def contacto(request):
+    return render(request, 'Contacts/contacto.html')
+
+def politicas (request):
+    return render(request, 'Contacts/privacy-policy.html')
+
+
 #scooters
 def scooters (request):
-    return render(request, 'Scooters/scooters.html')
+    return render(request, 'Models/Scooters/scooters.html')
 
 def VespaPrimavera(request):
-    return render(request, 'Scooters/VespaPrimavera.html')
+    return render(request, 'Models/Scooters/VespaPrimavera.html')
 
 def HondaPCX(request):
-    return render(request, 'Scooters/HondaPCX.html')
+    return render(request, 'Models/Scooters/HondaPCX.html')
 
 def YamahaNMAX(request):
-    return render(request, 'Scooters/YamahaNMAX.html')
+    return render(request, 'Models/Scooters/YamahaNMAX.html')
+
 
 def hyperNaked (request):
     return render(request, 'hyperNaked.html')
+
 
 def cb190 (request):
     return render(request, 'cb190.html')
@@ -114,5 +133,102 @@ def inicio_sesion(request):
     else:
         form = LoginForm()
     
+<<<<<<< HEAD
     context = {'form': form}
     return render(request, 'login.html', context)
+=======
+    return render(request, 'login.html', {'form': form})
+
+
+def carrito_compras(request):
+    # Establecer la configuración local para formatear los números
+    locale.setlocale(locale.LC_ALL, 'es_CL.UTF-8')  # Configuración local para Chile
+
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Crear una lista para almacenar los detalles de los productos en el carrito
+    detalles_carrito = []
+    total = 0
+
+    for producto_id, cantidad in carrito.items():
+        # Obtener el producto desde la base de datos
+        producto = get_object_or_404(Producto, pk=producto_id)
+
+        # Calcular el subtotal del producto
+        subtotal = producto.precio * cantidad
+
+        # Agregar los detalles del producto al carrito
+        detalles_carrito.append({
+            'producto': producto,
+            'cantidad': cantidad,
+            'subtotal': locale.currency(subtotal, grouping=True)  # Formatear el subtotal como una moneda local con separadores de miles
+        })
+
+        # Calcular el total de la compra
+        total += subtotal
+
+    # Formatear el total como una moneda local con separadores de miles
+    total_formateado = locale.currency(total, grouping=True)
+
+    # Guardar el carrito actualizado en la sesión
+    request.session['carrito'] = carrito
+
+    return render(request, 'ShoppingCart/carrito.html', {'detalles_carrito': detalles_carrito, 'total': total_formateado})
+
+
+def agregar_producto(request, producto_id):
+    # Obtener el producto desde la base de datos
+    producto = get_object_or_404(Producto, pk=producto_id)
+
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Obtener la cantidad ingresada por el usuario en el formulario
+    cantidad = int(request.POST.get('cantidad', 1))
+
+    # Verificar si el producto ya está en el carrito
+    if producto_id in carrito:
+        # Si el producto ya está en el carrito, incrementar la cantidad
+        carrito[producto_id] += cantidad
+    else:
+        # Si el producto no está en el carrito, agregarlo con la cantidad ingresada
+        carrito[producto_id] = cantidad
+
+    # Guardar el carrito actualizado en la sesión
+    request.session['carrito'] = carrito
+
+    return render(request, 'ShoppingCart/agregar_producto.html', {'producto': producto})
+
+def checkout(request):
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Realizar la lógica de checkout, como cálculos de precios, validaciones, etc.
+
+    # Limpiar el carrito después de completar el checkout
+    request.session['carrito'] = {}
+
+    return render(request, 'ShoppingCart/checkout.html')
+
+def eliminar_producto(request, producto_id):
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Verificar si el producto está en el carrito
+    if producto_id in carrito:
+        # Eliminar todas las unidades del producto del carrito
+        del carrito[producto_id]
+
+    # Guardar el carrito actualizado en la sesión
+    request.session['carrito'] = carrito
+
+    return redirect('carrito_compras')  # Redireccionar a la página del carrito de compras
+
+
+
+
+
+
+   
+>>>>>>> mlaborie
