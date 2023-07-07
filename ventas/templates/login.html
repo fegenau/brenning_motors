@@ -3,18 +3,19 @@
 {% load static %}
 
 {% block content %}
+
 <div class="container">
-    <h1>Iniciar Sesión</h1>
-    
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Iniciar Sesión">
-        <a href="../registro/">Registrarse</a>
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Iniciar Sesion</h5>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Iniciar Sesión">
+            <a href="../registro/" class="card-link">Registrate</a>
+        </div>
+      </div>
     </form>
-    <br>
-        <a href="">¿Olvidaste tu contraseña?</a>
-    
 </div>
 
 {% endblock %}
