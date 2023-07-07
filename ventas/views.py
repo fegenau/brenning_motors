@@ -6,7 +6,7 @@ from .models import Usuario,Producto
 from django.contrib import messages
 from django.contrib.auth import login, logout
 import locale
-
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -141,9 +141,9 @@ def carrito_compras(request):
     # Establecer la configuración local para formatear los números
     locale.setlocale(locale.LC_ALL, 'es_CL.UTF-8')  # Configuración local para Chile
 
-    # Obtener los productos en el carrito del usuario
+    # Obtener el carrito actual del usuario desde la sesión
     carrito = request.session.get('carrito', {})
-    
+
     # Crear una lista para almacenar los detalles de los productos en el carrito
     detalles_carrito = []
     total = 0
@@ -168,7 +168,11 @@ def carrito_compras(request):
     # Formatear el total como una moneda local con separadores de miles
     total_formateado = locale.currency(total, grouping=True)
 
+    # Guardar el carrito actualizado en la sesión
+    request.session['carrito'] = carrito
+
     return render(request, 'ShoppingCart/carrito.html', {'detalles_carrito': detalles_carrito, 'total': total_formateado})
+
 
 def agregar_producto(request, producto_id):
     # Obtener el producto desde la base de datos
@@ -203,5 +207,24 @@ def checkout(request):
     request.session['carrito'] = {}
 
     return render(request, 'ShoppingCart/checkout.html')
+
+def eliminar_producto(request, producto_id):
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Verificar si el producto está en el carrito
+    if producto_id in carrito:
+        # Eliminar todas las unidades del producto del carrito
+        del carrito[producto_id]
+
+    # Guardar el carrito actualizado en la sesión
+    request.session['carrito'] = carrito
+
+    return redirect('carrito_compras')  # Redireccionar a la página del carrito de compras
+
+
+
+
+
 
    
