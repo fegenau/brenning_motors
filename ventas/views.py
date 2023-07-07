@@ -12,7 +12,7 @@ def index(request):
     return render(request, 'index.html')
 
 def productos(request):
-    return render(request, 'productos.html')
+    return render(request, 'Products/productos.html')
 
 def modelos(request):
     return render(request, 'modelos.html')
