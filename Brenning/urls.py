@@ -26,13 +26,11 @@ urlpatterns = [
     path('', views.index),
     path('productos/',views.productos),
     path('modelos/',views.modelos),
-    path('contacto/',views.contacto),
     path('login/',views.login),
     path('urbanas/',views.urbanas),
     path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
-    path('privacy/', views.politicas),
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
@@ -46,10 +44,18 @@ urlpatterns = [
     path('YamahaNMAX/',views.YamahaNMAX),
     path('HondaPCX/',views.HondaPCX),
 
-
+    #Contacts
+    path('contacto/',views.contacto),
+    path('privacy/', views.politicas),
 
     path('registro/',views.registro_usuario),
     path('caferacer/',views.caferacer),
     path('ducati1100/',views.ducati1100),
     path('z650/',views.z650),
+
+
+    #ShoppingCart
+    path('carrito/', views.carrito_compras, name='carrito_compras'),
+    path('carrito/agregar/<int:producto_id>/', views.agregar_producto, name='agregar_producto'),
+    path('carrito/checkout/', views.checkout, name='checkout'),
 ]

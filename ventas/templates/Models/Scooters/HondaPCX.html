@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Africa-twin</title>
+        <link rel="stylesheet" href="{% static 'css/Africa-twin.css' %}">
+    </head>
+
+    <section class="hero">
+        <div class="container">
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Descubre la emoción de conducir</h1>
+                <p class="hero-subtitle">La Honda PCX es una moto scooter muy popular por su bajo consumo de combustible y su rendimiento. Es una buena opción para aquellos que buscan una moto cómoda y segura para desplazarse en la ciudad. También es muy fácil de manejar y tiene un diseño moderno y elegante.</p>
+                
+            </div>
+        </div>
+        <div class="container">
+            
+            <div class="hero-content">
+                <a href="/scooters" class="btn btn-primary">Volver</a>
+            </div>
+    </section>
+
+    <section class="featured-model">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{% static 'imgs/Scooter/HondaPCX_150.jpg' %}" alt="" style="max-width: 250%;">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="featured-model-title">Honda PCX 150</h1>
+                    <h3 class="featured-model-description">Precio lista: $2.390.000</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <br><br><br>
+
+    <div class="container">
+            <h5>*Los precios y especificaciones aplican respecto vehículos año modelo 2023, IVA Incluido; no incluyen: Permiso de Circulación, Patentes, accesorios, seguro y gastos administrativos.</h5>
+        </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2023 TheBrenningCompany</p>
+        </div>
+    </footer>
+{% endblock %}
