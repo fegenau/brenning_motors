@@ -23,7 +23,8 @@ urlpatterns = [
     path('', views.index),
     path('productos/',views.productos),
     path('modelos/',views.modelos),
-    path('login/',views.login),
+    path('contacto/',views.contacto),
+    path('login/',views.inicio_sesion),
     path('urbanas/',views.urbanas),
     path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
@@ -55,4 +56,5 @@ urlpatterns = [
     path('carrito/', views.carrito_compras, name='carrito_compras'),
     path('carrito/agregar/<int:producto_id>/', views.agregar_producto, name='agregar_producto'),
     path('carrito/checkout/', views.checkout, name='checkout'),
+    path('xr/', views.xr),
 ]

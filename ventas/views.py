@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .forms import RegistroUsuarioForm,LoginForm
 from .models import Usuario,Producto
+=======
+from django.shortcuts import render,redirect
+>>>>>>> egenau
 from django.contrib import messages
-from django.contrib.auth import login, logout
-
+from .forms import RegistroUsuarioForm, LoginForm
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def index(request):
@@ -104,34 +108,27 @@ def registro_usuario(request):
         form = RegistroUsuarioForm(request.POST)
         if form.is_valid():
             form.save()
-            usuario = form.save()
-            messages.success(request,'Registro existoso')
-            return redirect('/') 
+            messages.success(request, '¡Registro exitoso! Ahora puedes iniciar sesión.')
+            return redirect('registro')  # Redirigir a una página de registro exitoso
     else:
         form = RegistroUsuarioForm()
     
-    return render(request, 'formulario-registro.html', 
-                  {'form': form
-                   })
+    context = {'form': form}
+    return render(request, 'registro.html', context)
 
-def login (request):   
+
+
+def inicio_sesion(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
+        form = LoginForm(request, data=request.POST)
         if form.is_valid():
-            rut = form.cleaned_data['rut']
-            password = form.cleaned_data['password']
-            try:
-                usuario = Usuario.objects.get(rut=rut, password=password)
-                # Guardar información de sesión para el usuario
-                request.session['usuario_rut'] = usuario.rut
-                request.session['usuario_nombre'] = usuario.nombre
-                messages.success(request, 'Inicio de sesión exitoso.')
-                return redirect('/')
-            except Usuario.DoesNotExist:
-                messages.error(request, 'Credenciales inválidas.')
+            user = form.get_user()
+            login(request, user)
+            return redirect('/')  # Redirigir a la página de inicio
     else:
         form = LoginForm()
     
+<<<<<<< HEAD
     return render(request, 'login.html', {'form': form})
 
 
@@ -188,3 +185,7 @@ def checkout(request):
 
     return render(request, 'ShoppingCart/checkout.html')
    
+=======
+    context = {'form': form}
+    return render(request, 'login.html', context)
+>>>>>>> egenau
