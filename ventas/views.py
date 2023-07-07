@@ -203,4 +203,5 @@ def checkout(request):
     request.session['carrito'] = {}
 
     return render(request, 'ShoppingCart/checkout.html')
+
    
