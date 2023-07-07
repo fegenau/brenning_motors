@@ -1,5 +1,5 @@
 {% extends 'base.html' %} 
-
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +13,9 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    {% load static %}
+    
     <link rel="stylesheet" href="{% static './css/style.css' %}" />
-    {% load static %}
+    
     <link rel="stylesheet" href="{% static './css/normalize.css' %}" />
   
   </head>
@@ -40,7 +40,7 @@
         class="panel"
         style="background-image: url('{% static 'imgs/M_NAKED.jpg' %}')"
       >
-        <a href="/hypernaked" style="color: white"><h3>Hyper Naked</h3></a>
+        <a href="/hyperNaked" style="color: white"><h3>Hyper Naked</h3></a>
       </div>
       <div
         class="panel"
@@ -57,7 +57,7 @@
         <a href="/scooters" style="color: white"><h3>Scooters</h3></a>
       </div>
     </div>
-    {% load static %}
+    
     <script src="{% static 'js/script_models.js' %}"></script>
 
     <footer  >&copy;2023 TheBrenningCompany</footer>

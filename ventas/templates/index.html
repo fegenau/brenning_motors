@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="{% static './css/style.css' %}">
 </head>
 <body>
-
+  
+  {% if user.is_authenticated %}
+        <p>Bienvenido, {{ user.username }}</p>
+    {% endif %}
     <!--Slider de imagenes-->
 
 

@@ -25,32 +25,44 @@ urlpatterns = [
     path('productos/',views.productos),
     path('modelos/',views.modelos),
     path('contacto/',views.contacto),
-    path('login/',views.login),
+    path('login/',views.inicio_sesion),
     path('urbanas/',views.urbanas),
-    path('hypernaked/',views.hypernaked),
+    path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
-    path('privacy/', views.politicas),
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
+<<<<<<< HEAD
     path('agregar/<int:producto_id>/', agregar_producto, name="Add"),
     path('eliminar/<int:producto_id>/', eliminar_producto, name="Del"),
     path('restar/<int:producto_id>/', restar_producto, name="Sub"),
     path('limpiar/', limpiar_carrito, name="CLS"),
+=======
+    path('g310r/',views.g310r),
+    path('fz25/',views.fz25),
+    path('cb190/',views.cb190),
+>>>>>>> unreleased
 
-
-
-#Scooters
+    #Scooters
     path('scooters/',views.scooters),
-        path('VespaPrimavera/',views.VespaPrimavera),
-        path('YamahaNMAX/',views.YamahaNMAX),
-        path('HondaPCX/',views.HondaPCX),
+    path('VespaPrimavera/',views.VespaPrimavera),
+    path('YamahaNMAX/',views.YamahaNMAX),
+    path('HondaPCX/',views.HondaPCX),
+
+    #Contacts
+    path('contacto/',views.contacto),
+    path('privacy/', views.politicas),
+
+    path('registro/',views.registro_usuario),
+    path('caferacer/',views.caferacer),
+    path('ducati1100/',views.ducati1100),
+    path('z650/',views.z650),
 
 
-
-
-
-
-
+    #ShoppingCart
+    path('carrito/', views.carrito_compras, name='carrito_compras'),
+    path('carrito/agregar/<int:producto_id>/', views.agregar_producto, name='agregar_producto'),
+    path('carrito/checkout/', views.checkout, name='checkout'),
+    path('xr/', views.xr),
 ]
