@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Producto agregado al carrito</h1>
+    <p>El producto {{ producto.nombre }} ha sido agregado exitosamente al carrito de compras.</p>
+    <div class="container">
+        <div class="hero-content">
+            <a href="/scooters" class="btn btn-primary">Volver</a>
+            <a href="{% url 'carrito_compras' %}" class="btn btn-primary">Carrito de compras</a>
+        </div>
+    </div>
+{% endblock %}

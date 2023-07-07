@@ -49,4 +49,10 @@ urlpatterns = [
     path('caferacer/',views.caferacer),
     path('ducati1100/',views.ducati1100),
     path('z650/',views.z650),
+
+
+    #ShoppingCart
+    path('carrito/', views.carrito_compras, name='carrito_compras'),
+    path('carrito/agregar/<int:producto_id>/', views.agregar_producto, name='agregar_producto'),
+    path('carrito/checkout/', views.checkout, name='checkout'),
 ]

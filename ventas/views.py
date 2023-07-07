@@ -1,8 +1,8 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .forms import RegistroUsuarioForm,LoginForm
-from .models import Usuario
+from .models import Usuario,Producto
 from django.contrib import messages
 from django.contrib.auth import login, logout
 
@@ -133,3 +133,58 @@ def login (request):
         form = LoginForm()
     
     return render(request, 'login.html', {'form': form})
+
+
+def carrito_compras(request):
+    # Obtener los productos en el carrito del usuario
+    carrito = request.session.get('carrito', {})
+    
+    # Crear una lista para almacenar los detalles de los productos en el carrito
+    detalles_carrito = []
+    total = 0
+
+    for producto_id, cantidad in carrito.items():
+        # Obtener el producto desde la base de datos
+        producto = get_object_or_404(Producto, pk=producto_id)
+
+        # Calcular el subtotal del producto
+        subtotal = producto.precio * cantidad
+
+        # Agregar los detalles del producto al carrito
+        detalles_carrito.append({
+            'producto': producto,
+            'cantidad': cantidad,
+            'subtotal': subtotal
+        })
+
+        # Calcular el total de la compra
+        total += subtotal
+
+    return render(request, 'ShoppingCart/carrito.html', {'detalles_carrito': detalles_carrito, 'total': total})
+
+def agregar_producto(request, producto_id):
+    # Obtener el producto desde la base de datos
+    producto = get_object_or_404(Producto, pk=producto_id)
+
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Incrementar la cantidad del producto en el carrito
+    carrito[producto_id] = carrito.get(producto_id, 0) + 1
+
+    # Guardar el carrito actualizado en la sesión
+    request.session['carrito'] = carrito
+
+    return render(request, 'ShoppingCart/agregar_producto.html', {'producto': producto})
+
+def checkout(request):
+    # Obtener el carrito actual del usuario desde la sesión
+    carrito = request.session.get('carrito', {})
+
+    # Realizar la lógica de checkout, como cálculos de precios, validaciones, etc.
+
+    # Limpiar el carrito después de completar el checkout
+    request.session['carrito'] = {}
+
+    return render(request, 'ShoppingCart/checkout.html')
+   
