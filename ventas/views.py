@@ -5,6 +5,8 @@ from .forms import RegistroUsuarioForm,LoginForm
 from .models import Usuario,Producto
 from django.contrib import messages
 from django.contrib.auth import login, logout
+import locale
+
 
 # Create your views here.
 
@@ -136,6 +138,9 @@ def login (request):
 
 
 def carrito_compras(request):
+    # Establecer la configuración local para formatear los números
+    locale.setlocale(locale.LC_ALL, 'es_CL.UTF-8')  # Configuración local para Chile
+
     # Obtener los productos en el carrito del usuario
     carrito = request.session.get('carrito', {})
     
@@ -154,13 +159,16 @@ def carrito_compras(request):
         detalles_carrito.append({
             'producto': producto,
             'cantidad': cantidad,
-            'subtotal': subtotal
+            'subtotal': locale.currency(subtotal, grouping=True)  # Formatear el subtotal como una moneda local con separadores de miles
         })
 
         # Calcular el total de la compra
         total += subtotal
 
-    return render(request, 'ShoppingCart/carrito.html', {'detalles_carrito': detalles_carrito, 'total': total})
+    # Formatear el total como una moneda local con separadores de miles
+    total_formateado = locale.currency(total, grouping=True)
+
+    return render(request, 'ShoppingCart/carrito.html', {'detalles_carrito': detalles_carrito, 'total': total_formateado})
 
 def agregar_producto(request, producto_id):
     # Obtener el producto desde la base de datos
@@ -169,8 +177,16 @@ def agregar_producto(request, producto_id):
     # Obtener el carrito actual del usuario desde la sesión
     carrito = request.session.get('carrito', {})
 
-    # Incrementar la cantidad del producto en el carrito
-    carrito[producto_id] = carrito.get(producto_id, 0) + 1
+    # Obtener la cantidad ingresada por el usuario en el formulario
+    cantidad = int(request.POST.get('cantidad', 1))
+
+    # Verificar si el producto ya está en el carrito
+    if producto_id in carrito:
+        # Si el producto ya está en el carrito, incrementar la cantidad
+        carrito[producto_id] += cantidad
+    else:
+        # Si el producto no está en el carrito, agregarlo con la cantidad ingresada
+        carrito[producto_id] = cantidad
 
     # Guardar el carrito actualizado en la sesión
     request.session['carrito'] = carrito
