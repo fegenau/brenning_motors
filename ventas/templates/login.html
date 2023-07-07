@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <form method="post">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Iniciar Sesion</h5>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Iniciar Sesión">
+            <a href="../registro/" class="card-link">Registrate</a>
+        </div>
+      </div>
+    </form>
+</div>
+
+{% endblock %}

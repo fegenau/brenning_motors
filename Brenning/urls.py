@@ -16,7 +16,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ventas import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index),
+    path('productos/',views.productos),
+    path('modelos/',views.modelos),
+    path('contacto/',views.contacto),
+    path('login/',views.inicio_sesion),
+    path('urbanas/',views.urbanas),
+    path('hyperNaked/',views.hyperNaked),
+    path('adventuretouring/',views.adventuretouring),
+    path('vintage/',views.vintage),
+    path('privacy/', views.politicas),
+    path('africa-twin/',views.atwin),
+    path('super-tenere/',views.suptenere),
+    path('tiger/',views.tiger),
+    path('g310r/',views.g310r),
+    path('fz25/',views.fz25),
+    path('cb190/',views.cb190),
+    path('registro/',views.registro_usuario),
+    path('caferacer/',views.caferacer),
+    path('ducati1100/',views.ducati1100),
+    path('z650/',views.z650),
+    path('xr/', views.xr),
 ]

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+
+}
+
+#menu a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3f3f3f;
+
+}
+
+#menu button {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carousel-inner {
+    max-height: 39rem;
+}
+
+.a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.header {
+    display: flex;
+    min-height: 70px;
+    background-color: rgb(120, 1, 22);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
+#m1 {
+    width: 60%;
+    height: 200px;
+    margin-top: 0;
+    float: left;
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Monserrat' sans-serif;
+    color: black;
+    max-height: 100px;
+}
+
+#descripcionHN {
+    width: 30%;
+    height: 200px;
+    margin-top: 1%;
+    float: left;
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Monserrat' sans-serif;
+    color: black;
+}
+
+#descripcion1 {
+    width: 50%;
+    height: 200px;
+    margin-top: 1%;
+    margin-left: 10%;
+    float: left;
+    text-align: justify;
+    font-size: 20px;
+    font-family: 'Monserrat' sans-serif;
+    color: black;
+}
+
+#m2 {
+    opacity: 25%;
+    height: 50%;
+    height: auto;
+    margin-top: 35%;
+    float: right;
+    text-align: right;
+}
+
+.footer {}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav a {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    -webkit-transition: all 700ms ease-in;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+@media (max-width:450px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        padding: 10 px 0px;
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
