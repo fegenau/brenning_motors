@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
-from .forms import RegistroForm, LoginForm
-from django.contrib.auth import login
+from .forms import RegistroUsuarioForm, LoginForm
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 def index(request):
@@ -89,27 +89,30 @@ def xr(request):
 def cb190(request):
     return render(request, 'cb190.html')
 
-def registro(request):
+def registro_usuario(request):
     if request.method == 'POST':
-        form = RegistroForm(request.POST)
+        form = RegistroUsuarioForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Registro exitoso.')
-            return redirect('registro/')
+            messages.success(request, '¡Registro exitoso! Ahora puedes iniciar sesión.')
+            return redirect('registro')  # Redirigir a una página de registro exitoso
     else:
-        form = RegistroForm()
-    return render(request, 'registro.html', {'form': form})
+        form = RegistroUsuarioForm()
+    
+    context = {'form': form}
+    return render(request, 'registro.html', context)
 
 
-def login(request):
+
+def inicio_sesion(request):
     if request.method == 'POST':
         form = LoginForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            # Acción adicional después de un inicio de sesión exitoso
-            # Por ejemplo, redireccionar a una página de perfil
-            return redirect('perfil')
+            return redirect('/')  # Redirigir a la página de inicio
     else:
-        form = LoginForm(request)
-    return render(request, 'login.html', {'form': form})
+        form = LoginForm()
+    
+    context = {'form': form}
+    return render(request, 'login.html', context)

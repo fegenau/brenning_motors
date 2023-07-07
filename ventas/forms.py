@@ -1,34 +1,33 @@
 from django import forms
-from django.core.validators import EmailValidator, RegexValidator
+from django.core.validators import RegexValidator
 from .models import Usuario
-from datetime import date
+from django.utils import timezone
 from django.contrib.auth.forms import AuthenticationForm
 
 
-
-class RegistroForm(forms.ModelForm):
-    rut = forms.CharField(max_length=12, validators=[RegexValidator(r'^\d{1,3}(\.\d{1,3}){2}-[\dkK]$','Ingrese un RUT válido.')])
+class RegistroUsuarioForm(forms.ModelForm):
+    rut = forms.CharField(max_length=12, validators=[
+        RegexValidator(r'^\d{1,2}(\.\d{3}){2}-[\dkK]$','Ingrese un RUT válido.'
+                       )])
     email = forms.EmailField()
-    fecha_nacimiento = forms.DateField(widget=forms.SelectDateWidget(years=range(1960, date.today().year + 1)))
+    fecha_nacimiento = forms.DateField(widget=forms.SelectDateWidget(years=range(1950, timezone.now().year + 1)))
+    contraseña = forms.CharField(widget=forms.PasswordInput)
+    confirmar_contraseña = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
         model = Usuario
-        fields = ('rut', 'nombre_usuario', 'contraseña', 'nombre', 'apellido_paterno', 'apellido_materno', 'email', 'fecha_nacimiento', 'activo')
+        fields = ['rut', 'nombre_usuario', 'contraseña', 'confirmar_contraseña', 'nombre', 'apellido_paterno', 'apellido_materno', 'email', 'fecha_nacimiento']
 
-    def clean_rut(self):
-        rut = self.cleaned_data['rut']
-        rut = rut.replace('.', '').replace('-', '')  # Remover puntos y guion
-        rut_con_formato = '-'.join([rut[:-1], rut[-1]])  # Agregar guion antes del dígito verificador
+    def clean(self):
+        cleaned_data = super().clean()
+        contraseña = cleaned_data.get("contraseña")
+        confirmar_contraseña = cleaned_data.get("confirmar_contraseña")
 
-        # Verificar si el RUT ya existe en la base de datos
-        if Usuario.objects.filter(rut=rut_con_formato).exists():
-            raise forms.ValidationError('El RUT ingresado ya está registrado.')
-
-        return rut_con_formato
-
-
+        if contraseña and confirmar_contraseña and contraseña != confirmar_contraseña:
+            self.add_error('confirmar_contraseña', "Las contraseñas no coinciden.")
 
 class LoginForm(AuthenticationForm):
-    def confirm_login_allowed(self, user):
-        if not user.activo:
-            raise forms.ValidationError('Tu cuenta está desactivada.')
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].label = 'Nombre de usuario'
+        self.fields['password'].label = 'Contraseña'

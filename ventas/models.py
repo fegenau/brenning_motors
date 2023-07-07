@@ -24,7 +24,6 @@ class Usuario(models.Model):
     apellido_materno = models.CharField(max_length=100)
     email = models.EmailField()
     fecha_nacimiento = models.DateField()
-    activo = models.BooleanField(default=True)
 
     def __str__(self):
         return self.nombre_usuario
