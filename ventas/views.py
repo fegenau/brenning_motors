@@ -75,8 +75,8 @@ def YamahaNMAX(request):
 
 
 #hyperNaked
-def hyperNaked (request):
-    return render(request, 'hyperNaked.html')
+def hypernaked (request):
+    return render(request, 'hypernaked.html')
 
 
 def cb190 (request):
