@@ -13,7 +13,6 @@
 <body>
     
 <h1 style="text-align: center;">Productos </h1>
-
     <section class="contenedor">
         <div class="contenedor-items">
             <div class="item">
@@ -21,28 +20,65 @@
                 <!--img src="{% static 'imgs/guantes.jpg' %}" alt="" class="img-item"-->
                 <img src="{% static 'imgs/guantes.jpg' %}" alt="" width=100% />
                 <span class="precio-item">$20.000</span>
-                <button class="boton-item">Agregar al Carrito</button>
+                <form action="{% url 'agregar_producto' 1 %}" method="POST">
+                    {% csrf_token %}
+                    <br>
+                <center>
+                    <input type="number" name="cantidad" value="1" min="1" max="120"> <!-- Agregar un campo de cantidad -->
+                    
+                    <br><br>
+                    <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                </center>
+                </form>
             </div>
             <div class="item">
                 <span class="titulo-item">Botas</span>
                 <!--img src="{% static 'imgs/guantes.jpg' %}" alt="" class="img-item"-->
                 <img src="{% static 'imgs/zapatillas.jpg' %}" alt="" width=100% />
                 <span class="precio-item">$140.000</span>
-                <button class="boton-item">Agregar al Carrito</button>
+                <form action="{% url 'agregar_producto' 2 %}" method="POST">
+                    {% csrf_token %}
+                    <br>
+                <center>
+                    <input type="number" name="cantidad" value="1" min="1" max="120">
+                    
+                    <br><br>
+                    <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                </center>
+                </form>
             </div>
             <div class="item">
                 <span class="titulo-item">Chaqueta</span>
                 <!--img src="{% static 'imgs/guantes.jpg' %}" alt="" class="img-item"-->
                 <img src="{% static 'imgs/chaqueta.jpg' %}" alt="" width=100% />
                 <span class="precio-item">$200.000</span>
-                <button class="boton-item">Agregar al Carrito</button>
+                <form action="{% url 'agregar_producto' 3 %}" method="POST">
+                    {% csrf_token %}
+                    <br>
+                <center>
+                    <input type="number" name="cantidad" value="1" min="1" max="120">
+                    
+                    <br><br>
+                    <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                </center>
+                </form>
             </div>
             <div class="item">
               <span class="titulo-item">Mochila</span>
               <!--img src="{% static 'imgs/mochila.jpg' %}" alt="" class="img-item"-->
               <img src="{% static 'imgs/mochila.jpg' %}" alt="" width=100% />
               <span class="precio-item">$110.000</span>
-              <button class="boton-item">Agregar al Carrito</button>
+              <form action="{% url 'agregar_producto' 4 %}" method="POST">
+                {% csrf_token %}
+                <br>
+            <center>
+                <input type="number" name="cantidad" value="1" min="1" max="120">
+                
+                <br><br>
+                <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+            </center>
+            </form>
+              
           </div>
          </div>  
          <div class="carrito" id="carrito">
@@ -50,18 +86,6 @@
               <h2>Carrito</h2>
           </div>
 
-          <div class="carrito-items">
-             
-          </div>
-          <div class="carrito-total">
-              <div class="fila">
-                  <strong>Total</strong>
-                  <span class="carrito-precio-total">
-                      $120.000,00
-                  </span>
-              </div>
-              <button class="btn-pagar">Pagar ahora <i class="fa-solid fa-bag-shopping"></i> </button>
-          </div>
       </div>
     </section>
 

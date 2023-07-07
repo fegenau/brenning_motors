@@ -23,22 +23,39 @@ urlpatterns = [
     path('', views.index),
     path('productos/',views.productos),
     path('modelos/',views.modelos),
-    path('contacto/',views.contacto),
     path('login/',views.inicio_sesion),
     path('urbanas/',views.urbanas),
     path('hyperNaked/',views.hyperNaked),
     path('adventuretouring/',views.adventuretouring),
     path('vintage/',views.vintage),
-    path('privacy/', views.politicas),
     path('africa-twin/',views.atwin),
     path('super-tenere/',views.suptenere),
     path('tiger/',views.tiger),
     path('g310r/',views.g310r),
     path('fz25/',views.fz25),
     path('cb190/',views.cb190),
+	path('xr/', views.xr),
+
+    #Scooters
+    path('scooters/',views.scooters),
+    path('VespaPrimavera/',views.VespaPrimavera),
+    path('YamahaNMAX/',views.YamahaNMAX),
+    path('HondaPCX/',views.HondaPCX),
+
+    #Contacts
+    path('contacto/',views.contacto),
+    path('privacy/', views.politicas),
+
     path('registro/',views.registro_usuario),
     path('caferacer/',views.caferacer),
     path('ducati1100/',views.ducati1100),
     path('z650/',views.z650),
-    path('xr/', views.xr),
+
+
+    #ShoppingCart
+    path('carrito/', views.carrito_compras, name='carrito_compras'),
+    path('carrito/agregar/<int:producto_id>/', views.agregar_producto, name='agregar_producto'),
+    path('carrito/checkout/', views.checkout, name='checkout'),
+    path('carrito/eliminar/<int:producto_id>/', views.eliminar_producto, name='eliminar_producto'),
+
 ]
