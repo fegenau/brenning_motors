@@ -14,7 +14,6 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 
 - :gear: CRUD de productos: Permite al administrador realizar operaciones de crear, leer, actualizar y eliminar productos en la tienda. Esta funcionalidad está restringida solo al administrador.
 
-<<<<<<< HEAD
 - :bust_in_silhouette: Registro y Login de usuarios: Los usuarios pueden registrarse en la plataforma y luego iniciar sesión con sus credenciales. Esto les permite acceder a funcionalidades personalizadas y realizar compras.
 
 - :lock: Restricciones de usuario: Los usuarios normales tienen restricciones de acceso a ciertas funciones, como el CRUD de productos. Solo el administrador puede acceder y utilizar estas funciones.
