@@ -54,16 +54,12 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
   <img width="1799" alt="Captura de Pantalla 2023-07-07 a la(s) 20 34 45" src="https://github.com/fegenau/brenning_motors/assets/107156361/b9e7daa0-8e0e-4c5b-a57e-23355847d7d5">
 
 
->>>>>>> 078e66e28eaf836d7d6a9b40345f316abee7e5f0
+
 - :key: Gestión de usuarios: El administrador puede gestionar los usuarios registrados, asignar roles y realizar acciones relacionadas con la administración de usuarios.
 
 - :lock: Seguridad y autenticación: Se implementa un sistema de seguridad y autenticación para proteger la información de los usuarios y garantizar transacciones seguras.
 
-<<<<<<< HEAD
-- :art: Interfaz de usuario intuitiva: La interfaz de usuario está diseñada de manera intuitiva y fácil de usar, brindando una experiencia agradable para los usuarios durante su navegación y compra en la tienda en línea.
-
-=======
-  <img width="654" alt="Captura de Pantalla 2023-07-07 a la(s) 20 36 46" src="https://github.com/fegenau/brenning_motors/assets/107156361/21dd68a1-1bb7-4aef-9192-9408530dae46">
+<img width="654" alt="Captura de Pantalla 2023-07-07 a la(s) 20 36 46" src="https://github.com/fegenau/brenning_motors/assets/107156361/21dd68a1-1bb7-4aef-9192-9408530dae46">
 
 
 - :art: Interfaz de usuario intuitiva: La interfaz de usuario está diseñada de manera intuitiva y fácil de usar, brindando una experiencia agradable para los usuarios durante su navegación y compra en la tienda en línea.
@@ -71,7 +67,7 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 <img width="1920" alt="Captura de Pantalla 2023-07-07 a la(s) 20 37 59" src="https://github.com/fegenau/brenning_motors/assets/107156361/a22b4c61-9ac2-4a69-b735-014cebc5d77d">
 
 
->>>>>>> 078e66e28eaf836d7d6a9b40345f316abee7e5f0
+
 ## Acceso al Proyecto
 
 Puedes acceder al proyecto a través de la siguiente dirección web: :globe_with_meridians: [Brenning_Motors](https://fegenau.github.io/brenning_motors/)
@@ -95,27 +91,6 @@ Estas herramientas fueron seleccionadas por su eficiencia, popularidad y capacid
 
 Agradecemos a los siguientes desarrolladores por su contribución a este proyecto:
 
-<<<<<<< HEAD
-1. *Nombre del Desarrollador 1*
-   - Rol: Descripción breve del rol o contribución del desarrollador.
-   - GitHub: Enlace al perfil de GitHub del desarrollador.
-
-2. *Nombre del Desarrollador 2*
-   - Rol: Descripción breve del rol o contribución del desarrollador.
-   - GitHub: Enlace al perfil de GitHub del desarrollador.
-
-3. *Nombre del Desarrollador 3*
-   - Rol: Descripción breve del rol o contribución del desarrollador.
-   - GitHub: Enlace al perfil de GitHub del desarrollador.
-
-4. *Nombre del Desarrollador 4*
-   - Rol: Descripción breve del rol o contribución del desarrollador.
-   - GitHub: Enlace al perfil de GitHub del desarrollador.
-
-5. *Nombre del Desarrollador 5*
-   - Rol: Descripción breve del rol o contribución del desarrollador.
-   - GitHub: Enlace al perfil de GitHub del desarrollador.
-=======
 1. *Francisco Egenau*
    - Rol: TL, Distribuir tareas, entre los desarrolladores.
    
