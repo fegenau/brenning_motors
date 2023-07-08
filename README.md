@@ -57,6 +57,9 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 
 - :key: Gestión de usuarios: El administrador puede gestionar los usuarios registrados, asignar roles y realizar acciones relacionadas con la administración de usuarios.
 
+<img width="1801" alt="Captura de Pantalla 2023-07-07 a la(s) 20 57 01" src="https://github.com/fegenau/brenning_motors/assets/107156361/7afbc186-1380-4f9d-af60-b59b485d64bb">
+
+
 - :lock: Seguridad y autenticación: Se implementa un sistema de seguridad y autenticación para proteger la información de los usuarios y garantizar transacciones seguras.
 
 <img width="654" alt="Captura de Pantalla 2023-07-07 a la(s) 20 36 46" src="https://github.com/fegenau/brenning_motors/assets/107156361/21dd68a1-1bb7-4aef-9192-9408530dae46">
