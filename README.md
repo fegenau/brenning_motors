@@ -15,6 +15,9 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 - :gear: CRUD de productos: Permite al administrador realizar operaciones de crear, leer, actualizar y eliminar productos en la tienda. Esta funcionalidad está restringida solo al administrador.
 
 - :bust_in_silhouette: Registro y Login de usuarios: Los usuarios pueden registrarse en la plataforma y luego iniciar sesión con sus credenciales. Esto les permite acceder a funcionalidades personalizadas y realizar compras.
+<img width="735" alt="Captura de Pantalla 2023-07-07 a la(s) 20 29 31" src="https://github.com/fegenau/brenning_motors/assets/107156361/81ee2022-aacc-4e83-802f-9125e67bca42">
+<img width="858" alt="Captura de Pantalla 2023-07-07 a la(s) 20 31 27" src="https://github.com/fegenau/brenning_motors/assets/107156361/087d4ce6-da5a-4bae-b6b4-a1aa91ec29cc">
+
 
 - :lock: Restricciones de usuario: Los usuarios normales tienen restricciones de acceso a ciertas funciones, como el CRUD de productos. Solo el administrador puede acceder y utilizar estas funciones.
 
@@ -22,15 +25,27 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 
 - 🛒: Carrito de compras: Los usuarios pueden agregar productos al carrito de compras, modificar las cantidades y proceder al proceso de pago.
 
+<img width="1791" alt="Captura de Pantalla 2023-07-07 a la(s) 20 32 23" src="https://github.com/fegenau/brenning_motors/assets/107156361/aa343444-3eff-4ece-b062-041917c0d816">
+
+
 - :credit_card: Procesamiento de pagos: Los usuarios pueden realizar pagos de forma segura utilizando métodos de pago establecidos.
 
 - :clipboard: Panel de administración: El administrador tiene acceso a un panel de administración donde puede gestionar los productos, revisar los pedidos realizados, y administrar los usuarios y sus roles.
+
+  <img width="1799" alt="Captura de Pantalla 2023-07-07 a la(s) 20 34 45" src="https://github.com/fegenau/brenning_motors/assets/107156361/b9e7daa0-8e0e-4c5b-a57e-23355847d7d5">
+
 
 - :key: Gestión de usuarios: El administrador puede gestionar los usuarios registrados, asignar roles y realizar acciones relacionadas con la administración de usuarios.
 
 - :lock: Seguridad y autenticación: Se implementa un sistema de seguridad y autenticación para proteger la información de los usuarios y garantizar transacciones seguras.
 
+  <img width="654" alt="Captura de Pantalla 2023-07-07 a la(s) 20 36 46" src="https://github.com/fegenau/brenning_motors/assets/107156361/21dd68a1-1bb7-4aef-9192-9408530dae46">
+
+
 - :art: Interfaz de usuario intuitiva: La interfaz de usuario está diseñada de manera intuitiva y fácil de usar, brindando una experiencia agradable para los usuarios durante su navegación y compra en la tienda en línea.
+
+<img width="1920" alt="Captura de Pantalla 2023-07-07 a la(s) 20 37 59" src="https://github.com/fegenau/brenning_motors/assets/107156361/a22b4c61-9ac2-4a69-b735-014cebc5d77d">
+
 
 ## Acceso al Proyecto
 
