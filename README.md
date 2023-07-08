@@ -20,7 +20,7 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 
 - :shopping_cart: Catálogo de productos: Los usuarios pueden explorar el catálogo de productos disponible en la tienda, visualizar detalles y características de cada producto, así como agregarlos al carrito de compras.
 
-- :shopping_basket: Carrito de compras: Los usuarios pueden agregar productos al carrito de compras, modificar las cantidades y proceder al proceso de pago.
+- 🛒: Carrito de compras: Los usuarios pueden agregar productos al carrito de compras, modificar las cantidades y proceder al proceso de pago.
 
 - :credit_card: Procesamiento de pagos: Los usuarios pueden realizar pagos de forma segura utilizando métodos de pago establecidos.
 
