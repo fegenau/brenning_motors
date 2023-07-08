@@ -1,42 +1,76 @@
-Página de Venta de Motos - README
+## Propósito del Proyecto
 
-¡Bienvenido a la Página de Brenning Motors!
+El propósito del proyecto "Brenning Motors" es desarrollar un e-commerce especializado en la venta de accesorios de motos y motocicletas. Este proyecto forma parte de una asignatura de programación web, y tiene como objetivo principal aplicar los conocimientos adquiridos en el desarrollo de una aplicación web completa.
 
-Descripción
+Nuestro e-commerce proporcionará a los entusiastas de las motos y motocicletas una plataforma en línea donde podrán explorar y adquirir una amplia gama de accesorios, desde cascos y guantes hasta piezas de repuesto y equipamiento adicional para personalizar sus motos. Además, también ofreceremos la opción de compra de motocicletas nuevas y usadas.
 
-Nuestra plataforma en línea ha sido meticulosamente diseñada para ofrecerte una experiencia excepcional al encontrar y adquirir la motocicleta perfecta. Encontrarás una amplia gama de motos de alta calidad que se adaptan a tus necesidades y deseos. Desde elegantes motocicletas deportivas hasta robustas motos de aventura, nuestra página cuenta con los modelos más avanzados del mercado.
+El proyecto se centrará en la implementación de características clave de un e-commerce, como un catálogo de productos completo con opciones de búsqueda y filtrado, un sistema de carrito de compras, procesamiento de pagos y un panel de administración para gestionar los productos y los pedidos.
 
-Características Principales
+Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y atractiva para los entusiastas de las motos, brindando un servicio de calidad y productos de alta calidad.
 
-Búsqueda Inteligente: Nuestra avanzada función de búsqueda utiliza algoritmos de última generación para brindarte resultados precisos y personalizados. Podrás filtrar las motos según tus preferencias, como marca, modelo, estilo, características técnicas y más, para descubrir rápidamente las opciones que se ajusten a tus necesidades.
-Detalles Exquisitos: Cada moto en nuestro catálogo cuenta con una descripción detallada que destaca sus características distintivas y su rendimiento excepcional. Desde especificaciones técnicas hasta detalles de diseño, encontrarás información completa que te permitirá conocer a fondo cada moto antes de tomar una decisión.
-Experiencia Visual Inmersiva: Sumérgete en la experiencia visual con nuestras imágenes de alta resolución. Cada moto cuenta con una galería de imágenes que captura su belleza desde todos los ángulos. Explora cada detalle y aprecia el diseño impecable de las motos que ofrecemos.
-Conexión con Vendedores Certificados: Valoramos la confianza y la seguridad en todas las transacciones. Por eso, trabajamos únicamente con vendedores certificados que ofrecen motos de calidad. Te proporcionaremos la información necesaria sobre cada vendedor para que puedas tomar decisiones informadas y contactarlos directamente a través de nuestra plataforma segura.
-Comparación de Motos Avanzada: Si te encuentras en la difícil tarea de elegir entre varias motos, nuestra función de comparación avanzada te permitirá evaluar las características y especificaciones de cada modelo en una interfaz intuitiva y fácil de usar. Compara precios, rendimiento y características para encontrar la moto que se adapte perfectamente a tus gustos.
-Tecnologías Utilizadas
+¡Bienvenidos a Brenning Motors!
 
-Frontend: HTML5, CSS3, JavaScript (React.js)
-Backend: Node.js, Express.js
-Base de Datos: MongoDB
-Autenticación y Seguridad: JSON Web Tokens (JWT), Bcrypt
-Instalación
+## Funcionalidades
 
-Clona este repositorio en tu máquina local.
-Asegúrate de tener Node.js y MongoDB instalados en tu sistema.
-Ejecuta npm install en la carpeta raíz para instalar todas las dependencias.
-Crea un archivo .env en la carpeta raíz y configura las variables de entorno necesarias (por ejemplo, la cadena de conexión de la base de datos).
-Ejecuta npm start para iniciar la aplicación.
-Abre tu navegador web y visita http://localhost:3000 para experimentar la página de venta de motos de Apple en acción.
-Contribución
+- :gear: CRUD de productos: Permite al administrador realizar operaciones de crear, leer, actualizar y eliminar productos en la tienda. Esta funcionalidad está restringida solo al administrador.
 
-¡Agradecemos tus contribuciones para hacer nuestra página de venta de motos aún mejor! Si encuentras algún problema, tienes ideas de mejora o deseas agregar nuevas características, estaremos encantados de recibir tus aportes. No dudes en abrir un issue o enviar una pull request con tus cambios.
+- :bust_in_silhouette: Registro y Login de usuarios: Los usuarios pueden registrarse en la plataforma y luego iniciar sesión con sus credenciales. Esto les permite acceder a funcionalidades personalizadas y realizar compras.
 
-Soporte
+- :lock: Restricciones de usuario: Los usuarios normales tienen restricciones de acceso a ciertas funciones, como el CRUD de productos. Solo el administrador puede acceder y utilizar estas funciones.
 
-Si necesitas asistencia o tienes alguna pregunta sobre nuestra plataforma de venta de motos, nuestro equipo de soporte estará encantado de ayudarte. Ponte en contacto con nosotros a través de la dirección de correo electrónico support@applemotorcycles.com y te responderemos lo antes posible.
+- :shopping_cart: Catálogo de productos: Los usuarios pueden explorar el catálogo de productos disponible en la tienda, visualizar detalles y características de cada producto, así como agregarlos al carrito de compras.
 
-¡Gracias por elegir la Página de Venta de Motos de Apple! Esperamos que disfrutes explorando nuestras motos y encuentres la motocicleta de tus sueños.
+- :shopping_basket: Carrito de compras: Los usuarios pueden agregar productos al carrito de compras, modificar las cantidades y proceder al proceso de pago.
 
-Apple Motorcycles
+- :credit_card: Procesamiento de pagos: Los usuarios pueden realizar pagos de forma segura utilizando métodos de pago establecidos.
 
-Recuerda que deberás reemplazar footer.png por la imagen real que deseas utilizar en tu README. Asegúrate de tener la imagen en la misma carpeta y con el nombre correcto antes de incluirla en tu archivo README.
+- :clipboard: Panel de administración: El administrador tiene acceso a un panel de administración donde puede gestionar los productos, revisar los pedidos realizados, y administrar los usuarios y sus roles.
+
+- :key: Gestión de usuarios: El administrador puede gestionar los usuarios registrados, asignar roles y realizar acciones relacionadas con la administración de usuarios.
+
+- :lock: Seguridad y autenticación: Se implementa un sistema de seguridad y autenticación para proteger la información de los usuarios y garantizar transacciones seguras.
+
+- :art: Interfaz de usuario intuitiva: La interfaz de usuario está diseñada de manera intuitiva y fácil de usar, brindando una experiencia agradable para los usuarios durante su navegación y compra en la tienda en línea.
+
+## Acceso al Proyecto
+
+Puedes acceder al proyecto a través de la siguiente dirección web: :globe_with_meridians: [Brenning_Motors](https://fegenau.github.io/brenning_motors/)
+
+Asegúrate de tener una conexión activa a Internet y utiliza tu navegador web para acceder al proyecto. Haz clic en el enlace proporcionado y serás redirigido a la página web del proyecto.
+
+Si tienes problemas para acceder al proyecto a través del enlace anterior, sigue las instrucciones específicas proporcionadas por tu equipo o proyecto para obtener el acceso adecuado.
+
+## Herramientas Utilizadas
+
+Durante el desarrollo de este proyecto, se utilizaron las siguientes herramientas:
+
+- Python 3.11: Lenguaje de programación utilizado para el desarrollo del proyecto.
+- Django 2.7: Framework de Python utilizado para construir la aplicación web.
+- DB SQLite 3: Sistema de gestión de bases de datos utilizado para almacenar y administrar los datos del proyecto.
+- Visual Studio Code: Editor de código fuente utilizado para el desarrollo del proyecto.
+
+Estas herramientas fueron seleccionadas por su eficiencia, popularidad y capacidad para facilitar el desarrollo del proyecto. Cada una de ellas desempeña un papel importante en el proceso de desarrollo, desde el lenguaje de programación hasta el entorno de desarrollo y el sistema de gestión de bases de datos.
+
+## Desarrolladores
+
+Agradecemos a los siguientes desarrolladores por su contribución a este proyecto:
+
+1. *Nombre del Desarrollador 1*
+   - Rol: Descripción breve del rol o contribución del desarrollador.
+   - GitHub: Enlace al perfil de GitHub del desarrollador.
+
+2. *Nombre del Desarrollador 2*
+   - Rol: Descripción breve del rol o contribución del desarrollador.
+   - GitHub: Enlace al perfil de GitHub del desarrollador.
+
+3. *Nombre del Desarrollador 3*
+   - Rol: Descripción breve del rol o contribución del desarrollador.
+   - GitHub: Enlace al perfil de GitHub del desarrollador.
+
+4. *Nombre del Desarrollador 4*
+   - Rol: Descripción breve del rol o contribución del desarrollador.
+   - GitHub: Enlace al perfil de GitHub del desarrollador.
+
+5. *Nombre del Desarrollador 5*
+   - Rol: Descripción breve del rol o contribución del desarrollador.
+   - GitHub: Enlace al perfil de GitHub del desarrollador.
