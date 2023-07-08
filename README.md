@@ -14,6 +14,10 @@ Nuestro objetivo es crear una experiencia de compra en línea fácil, segura y a
 
 - :gear: CRUD de productos: Permite al administrador realizar operaciones de crear, leer, actualizar y eliminar productos en la tienda. Esta funcionalidad está restringida solo al administrador.
 
+<img width="1660" alt="Captura de Pantalla 2023-07-07 a la(s) 20 53 36" src="https://github.com/fegenau/brenning_motors/assets/107156361/bee6a332-09b6-4d8c-b1cb-093705e01526">
+
+
+
 - :bust_in_silhouette: Registro y Login de usuarios: Los usuarios pueden registrarse en la plataforma y luego iniciar sesión con sus credenciales. Esto les permite acceder a funcionalidades personalizadas y realizar compras.
 <img width="735" alt="Captura de Pantalla 2023-07-07 a la(s) 20 29 31" src="https://github.com/fegenau/brenning_motors/assets/107156361/81ee2022-aacc-4e83-802f-9125e67bca42">
 <img width="858" alt="Captura de Pantalla 2023-07-07 a la(s) 20 31 27" src="https://github.com/fegenau/brenning_motors/assets/107156361/087d4ce6-da5a-4bae-b6b4-a1aa91ec29cc">
